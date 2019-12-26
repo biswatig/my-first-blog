@@ -3,20 +3,17 @@
         <title>Bits 'n' Pieces blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Bits 'n' Pieces blog</a></h1>
-        </div>
+      <div>
+        <h1><a href="/">Django One's Blog</a></h1>
+      </div>
 
+      {% for post in posts %}
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Hannah on Totalitarianism</a></h2>
-            <p> “The success of totalitarian movements among the masses meant the end of two illusions of democratically ruled countries in general and of European nation-states and their party system in particular. The first was that the people in its majority had taken an active part in government, and that each individual was in sympathy with one’s own or somebody else’s party . . . The second . . . was that these politically indifferent masses did not matter, that they were truly neutral and constituted no more than the inarticulate backward setting for the political life of the nation.”</p>
+          <p>published: {{ post.published_date }}</p>
+          <h2><a href="">{{ post.title }}</a></h2>
+          <p>{{ post.text|linebreaksbr }}</p>
         </div>
+      {% endfor %}
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">You can explore..</a></h2>
-            <p>“The Decline of the Nation-State and the End of the Rights of Man”</p>
-        </div>
     </body>
 </html>
